@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: smartshop-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: smartshop
+      POSTGRES_PASSWORD: smartshop
+      POSTGRES_DB: smartshop
+    ports:
+      - "5433:5432" # host 5433 để tránh đụng Postgres cài sẵn trên máy
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U smartshop -d smartshop"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  pgdata:

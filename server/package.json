@@ -1,0 +1,26 @@
+{
+  "name": "smartshop-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env --watch src/index.js",
+    "start": "node --env-file-if-exists=.env src/index.js",
+    "db:init": "node --env-file-if-exists=.env scripts/db-init.js",
+    "smoke": "node --env-file-if-exists=.env scripts/smoke-test.js",
+    "pos:listen": "node --env-file-if-exists=.env scripts/pos-listener.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "pg": "^8.13.1",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "socket.io-client": "^4.8.1"
+  }
+}

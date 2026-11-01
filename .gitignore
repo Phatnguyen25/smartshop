@@ -1,0 +1,15 @@
+node_modules/
+.env
+dist/
+*.log
+
+# Flutter / Android build artifacts
+scanner_app/.dart_tool/
+scanner_app/build/
+scanner_app/android/.gradle/
+scanner_app/android/local.properties
+scanner_app/android/app/debug/
+scanner_app/android/app/profile/
+scanner_app/android/app/release/
+scanner_app/.flutter-plugins
+scanner_app/.flutter-plugins-dependencies
